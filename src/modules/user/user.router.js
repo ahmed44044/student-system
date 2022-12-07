@@ -6,7 +6,7 @@ import { endPoint } from "./user.endPoint.js";
 import * as validators from './user.validation.js'
 const router=Router()
 
-router.get('/allStudent',userController.allStudents)
+router.get('/allStudent',auth(endPoint.admin),userController.allStudents)
 router.get('/studentLevel1',auth(endPoint.admin),userController.studentLevel1)
 router.get('/studentLevel2',auth(endPoint.admin),userController.studentLevel2)
 router.get('/studentLevel3',auth(endPoint.admin),userController.studentLevel3)
